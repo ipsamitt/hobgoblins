@@ -1,11 +1,9 @@
-## Welcome to GitHub Pages
+## Introduction
 
 THIS IS FOR THE HOBGOBLINS!!!
-### Markdown
+## Data Scraping
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
+```
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -25,7 +23,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import linear_model
 from sklearn import svm
-    
+ 
+austin_weather = pd.read_csv("austin_weather.csv")
+austin_weather
 ```
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
