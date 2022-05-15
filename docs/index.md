@@ -26,6 +26,6 @@ from sklearn import linear_model
 from sklearn import svm
  
 austin_weather = pd.read_csv("austin_weather.csv")
-austin_weather.columns()
+austin_weather.columns
 ```
 
