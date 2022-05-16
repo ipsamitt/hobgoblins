@@ -2,7 +2,12 @@
 ## Introduction
 
 THIS IS FOR THE HOBGOBLINS!!!
-## Data Scraping
+## Data Collection
+Scraping the data: We will be obtaining the data from https://www.kaggle.com/datasets/grubenm/austin-weather
+
+The weather data, is a subset of the overall, Austin Bike Shares Trip mobile app database https://www.kaggle.com/datasets/jboysen/austin-bike
+
+We wanted to do something to improve the overall Austin Bike Shares Trip mobile app, so we went with weather prediction in order to ensure the safety of riders. Having accurate weather prediciton daily allows riders to safely prepare for whatever inclimate weather conditions could occur. 
 
 ```
 import pandas as pd
@@ -24,14 +29,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import linear_model
 from sklearn import svm
-```
-## Data Collection
-Scraping the data: We will be obtaining the data from https://www.kaggle.com/datasets/grubenm/austin-weather
-
-The weather data, is a subset of the overall, Austin Bike Shares Trip mobile app database https://www.kaggle.com/datasets/jboysen/austin-bike
-
-We wanted to do something to improve the overall Austin Bike Shares Trip mobile app, so we went with weather prediction in order to ensure the safety of riders. Having accurate weather prediciton daily allows riders to safely prepare for whatever inclimate weather conditions could occur. 
-``` 
 austin_weather = pd.read_csv("austin_weather.csv")
 austin_weather.columns
 ``` 
