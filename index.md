@@ -37,10 +37,6 @@ from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import RepeatedKFold
 
-```
-
-
-```python
 austin_weather = pd.read_csv("austin_weather.csv")
 austin_weather.head()
 ```
