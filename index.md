@@ -1,8 +1,11 @@
-# Weather Prediction for Pedestrain Safety
+# Weather Prediction for Pedestrian Safety
+### By Ipsa Mittra and Jonathan Camberos, Spring 2022
 
 ## Introduction
 
-# write stuff about why we picked this
+One of the biggest jokes about metereology is how bad weather predictions can be. Although the accuracy has improved greatly over the last few decades, we wanted to further investigate the process of weather prediction and see if we could make any improvements. Knowing what the weather will be like is critical to figure out your plans for the day, what clothes to wear, and most importantly to determine safe transportation. The National Highway Traffic Safety Administration (NHTSA) states that wet pavement causes 70% of weather-related car accidents, and rain causes 46% of weather-related car accidents.On average, more than 6,000 people are killed, and 445,000 people are injured due to weather-related accidents, and 10% of all car accidents are caused by rain [(Jackson, 2019)](https://betzandbaril.com/car-accidents-caused-by-rain-statistics-safety-tips/). 
+
+We decided to choose this project as members of our team have been personally affected by pedestrain injuries in a weather-related car accident. The goal of our project was to look into weather event data in a city and try to determine what the weather will be like based on numerical information of a day such as humidity, visbility, sea level pressure, dew point, temperature, and wind mph. Our hope is that our project will help others gain a better understanding of how the weather works and give other people a safer view of the road in any weather.
 
 ## Data Collection
 
@@ -191,9 +194,6 @@ austin_weather.head()
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
-</div>
-
 
 
 ## Data Management
@@ -359,9 +359,6 @@ austin_weather.head()
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
-</div>
-
 
 
 This dataset displayed missing data as '-' and has a total of 80 missing data points across all columns. As this data is negligible in consideration to the dataset of over 1300 values, we have decided to remove all rows with data points that have missing values.
@@ -547,9 +544,6 @@ austin_weather.head()
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
-</div>
-
 
 
 We will also create separate dataframes based on the weather event of each day.
@@ -716,8 +710,7 @@ austin_rain.head()
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
-</div>
+
 
 ## Exploratory Data Analysis
 We will then try to create graphs to look at any important cycles that relate to time and the potential different variables that affect weather events.
@@ -1351,8 +1344,6 @@ train.head()
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
-</div>
 
 
 
@@ -1539,8 +1530,7 @@ test.head()
     </tr>
   </tbody>
 </table>
-<p>5 rows × 22 columns</p>
-</div>
+
 
 
 
@@ -1654,4 +1644,4 @@ Our hypothesis test results in a p-value of 1. This means that we fail to reject
 
 Based on our analysis of this weather data, we have determined that there are clear patterns in how variables such as humidity, visibility, or dew point can affect weather events. However, our investigation did not fully determine a method of how to use these specific data values to classify weather events. We can conclude that individually using humidity or visibility can be a decent indicator of what the weather will look like, however in the future it would be great to get a better handle of what will be the mose efficent predictor.
 
-Our work also focused on the weather of Austin, Texas. In a arid climate such as Texas, it is far more unlikely that weather events such as snow will occur. For further analysis, it might be interesting to look at the locations where the weather is much more varied such as College Park. More varied data might give us a better set of data to train on and detect subtleties in weather events in precipitation. Although we weren't able to solve the mystery of metereology, we hope our tutorial gave you a deeper insight into what goes behind determining the weather!
+Our work also focused on the weather of Austin, Texas. In a arid climate such as Texas, it is far more unlikely that weather events such as snow will occur. For further analysis, it might be interesting to look at the locations where the weather is much more varied such as College Park. More varied data might give us a better set of data to train on and detect subtleties in weather events in precipitation. These better predictors can be used to provide pedestrians and drivers a more helpful understanding of how to be safe on the road. Although we weren't able to solve the mystery of metereology, we hope our tutorial gave you a deeper insight into what goes behind determining the weather!
