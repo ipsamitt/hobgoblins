@@ -41,24 +41,6 @@ from sklearn.model_selection import RepeatedKFold
 austin_weather = pd.read_csv("austin_weather.csv")
 austin_weather.head()
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -227,24 +209,6 @@ austin_weather['Events'].replace(' ', 'Sun', inplace=True)
 austin_weather['PrecipitationSumInches'].replace('T', 0.01, inplace=True)
 austin_weather.head()
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -433,24 +397,6 @@ austin_weather['WindGustMPH'] = austin_weather['WindGustMPH'].astype(float)
 austin_weather['PrecipitationSumInches'] = austin_weather['PrecipitationSumInches'].astype(float)
 austin_weather.head()
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -620,24 +566,6 @@ austin_thunderstorm = austin_weather.loc[austin_weather['Events'].astype(str).st
 #example of new dataframe that is only for rainy days
 austin_rain.head()
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -791,11 +719,8 @@ austin_rain.head()
 <p>5 rows × 21 columns</p>
 </div>
 
-
-
 ## Exploratory Data Analysis
 We will then try to create graphs to look at any important cycles that relate to time and the potential different variables that affect weather events.
-
 
 ```python
 # Create x, y axis and title of graph
@@ -1276,23 +1201,6 @@ train, test = train_test_split(austin_weather, test_size = 0.2, random_state = 4
 train.head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1481,37 +1389,6 @@ test['Numerical_Events'] = holder3
 test.head()
 ```
 
-    C:\Users\ipsam\AppData\Local\Temp/ipykernel_8872/1993493285.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame.
-    Try using .loc[row_indexer,col_indexer] = value instead
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      train['Numerical_Events'] = holder
-    C:\Users\ipsam\AppData\Local\Temp/ipykernel_8872/1993493285.py:26: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame.
-    Try using .loc[row_indexer,col_indexer] = value instead
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      test['Numerical_Events'] = holder3
-    
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
