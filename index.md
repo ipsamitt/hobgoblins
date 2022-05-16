@@ -1180,7 +1180,7 @@ plt.show()
 Here we can see that both humidity and visibility are contributing factors towards the event. With high humidity and low visibiilty we can see an increase in the event rain, and with low humidity and high visibility we can see a increase in the event sun.
 
 ## Hypothesis Testing and Classification Methods
-We want to determine a good model that will determine what the weather event is based on variable information. Through our exploration of the past data, we have recognized that humidity and visibility may be good variables that can predict what the weather event will be. Since we will be using to data to determine a type of event, we need to use a classification method. For ease, we have chosen to try to determine a classification technique using linear SVM. However, we need to determine which variable will be more useful in giving an accurate classification. In order to determine this, we will be performing a paired t-test.
+We want to determine a good model that will determine what the weather event is based on variable information. Through our exploration of the past data, we have recognized that humidity and visibility may be good variables that can predict what the weather event will be. Since we will be using to data to determine a type of event, we need to use a classification method. For ease, we have chosen to try to determine a classification technique using linear SVM. However, we need to determine which variable will be more useful in giving an accurate classification. In order to determine this, we will be performing a differene of means t-test.
 
 First, we need to create our models and determine how well they perform on testing and training data. We create split our Austin weather dataset into a training dataframe and a testing dataframe.
 
@@ -1604,7 +1604,7 @@ clf2score.append(clf2.score(X, Y))
 
     0.8007662835249042
     
-The accuracy of the testing set for our first model was 81.9923% and the accuracy of the second model of the testing set was 80.00766%. Since the percentages of these accuracies are so close, we will perform a hypothesis test to see if there is any difference between the two models' accuracy based on this testing set. Our null hypothesis is that there is no difference between the two models and our alternate hypothesis is that the first model which uses humidity as the variable for making classification decisions performs better than the model that uses visibility. We will perform a difference of means t-test with an alpha level.
+The accuracy of the testing set for our first model was 81.9923% and the accuracy of the second model of the testing set was 80.00766%. Since the percentages of these accuracies are so close, we will perform a hypothesis test to see if there is any difference between the two models' accuracy based on this testing set. Our null hypothesis is that there is no difference between the two models and our alternate hypothesis is that the first model which uses humidity as the variable for making classification decisions performs better than the model that uses visibility. We will perform a difference of means t-test with an alpha level of 0.05.
 
 
 ```python
