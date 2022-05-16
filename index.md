@@ -9,7 +9,7 @@ We decided to choose this project as members of our team have been personally af
 
 ## Data Collection
 
-We gathered our data from https://www.kaggle.com/datasets/grubenm/austin-weather. The weather data is a subset of the overall Austin Bike Shares Trip mobile app database https://www.kaggle.com/datasets/jboysen/austin-bike. The data is provided as a CSV file, so we downloaded the file and worked with it locally. 
+We gathered our data from [https://www.kaggle.com/datasets/grubenm/austin-weather](https://www.kaggle.com/datasets/grubenm/austin-weather). This dataset contained years' worth of data on humidity, visbility, sea level pressure, dew point, temperature, and wind mph values. Therefore it would have a lot of information available for us to examine and determine what is best to create a weather classification model. The weather data is a subset of the overall Austin Bike Shares Trip mobile app database: [https://www.kaggle.com/datasets/jboysen/austin-bike](https://www.kaggle.com/datasets/jboysen/austin-bike). The data is provided as a CSV file, so we downloaded the file and worked with it locally. 
 
 
 ```python
@@ -542,7 +542,7 @@ austin_weather.head()
 </table>
 
 
-We will also create separate dataframes based on the weather event of each day.
+We will also create separate dataframes based on the weather event of each day so we can analyze the data values for each weather type individually.
 
 
 ```python
@@ -811,7 +811,7 @@ plt.show()
     
 
 
-We will also make bar charts to the breakdown of weather events over each range of potential variables that affect the event outcomes.
+We will also make bar charts to the breakdown of weather events over each range of potential variables that affect the event outcomes. This will help us determine how often each weather type over the range of each variable we are looking at.
 
 
 ```python
@@ -1081,7 +1081,7 @@ plt.show()
     
 
 
-We would also like to explore the relationship between any two variables. Based on the plots we have created, we want to examine the relationships between the humidity, sea level, temperature, and dew point variables. These variables had relatively cyclic trends in the line graphs, and some of them had a good variation in the events they represented in the charts. For example, all of the weather events besides snow are visible on the chart for humidity. Since this is for exploratory purposes to determine what variables can predict all weather events later on, we will only be focusing on the rain and sun events which occur the most often within this dataset.
+Now that we have seen how each variable looks like individually over time and in the context of each weather type, we would also like to explore the relationship between two variables. Based on the plots we have created, we want to examine the relationships between the humidity, sea level, temperature, and dew point variables. These variables had relatively cyclic trends in the line graphs, and some of them had a good variation in the events they represented in the charts. For example, all of the weather events besides snow are visible on the chart for humidity. Since this is for exploratory purposes to determine what variables can predict all weather events later on, we will only be focusing on the rain and sun events which occur the most often within this dataset. If we were to look at data where the other events occured more often, we would also have included those weather types for anlaysis.
 
 
 ```python
