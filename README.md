@@ -1,2 +1,0 @@
-# hobgoblins
-WELCOME TO HOBGOBLINS
