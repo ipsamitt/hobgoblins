@@ -1180,9 +1180,9 @@ plt.show()
 Here we can see that both humidity and visibility are contributing factors towards the event. With high humidity and low visibiilty we can see an increase in the event rain, and with low humidity and high visibility we can see a increase in the event sun.
 
 ## Hypothesis Testing and Classification Methods
-We want to determine a good model that will determine what the weather event is based on variable information. Through our exploration of the past data, we have recognized that humidity and visibility may be good variables that can predict what the weather event will be. Since we will be using to data to determine a type of event, we need to use a classification method. For ease, we have chosen to try to determine a classification technique using linear SVM. However, we need to determine which variable will be more useful in giving an accurate classification. In order to determine this, we will be performing a differene of means t-test.
+We want to determine a good model that will determine what the weather event is based on variable information. Through our exploration of the past data, we have recognized that humidity and visibility may be good variables that can predict what the weather event will be. Since we will be using to data to determine a type of event, we need to use a classification method. Some of the options we could use as machine learning methods for classification are logistic regression, decision trees, and support vector machines (SVM). Both logistic regression and decision trees are more useful for binary classification. However, we are trying to perform a multi-class classification as each day will be assigned one of five weather options: sun, rain, snow, thunderstorm or fog. Therefore, we will use linear SVMs to create the most effective model. However, we need to determine which variable will be more useful in giving an accurate classification. In order to determine this, we will be performing a differene of means t-test.
 
-First, we need to create our models and determine how well they perform on testing and training data. We create split our Austin weather dataset into a training dataframe and a testing dataframe.
+First, we need to create our models and determine how well they perform on testing and training data. We split our Austin weather dataset into a training dataframe and a testing dataframe.
 
 
 ```python
@@ -1636,8 +1636,48 @@ Pvalue
 
 Our hypothesis test results in a p-value of 1. This means that we fail to reject the null hypothesis and that we do not view a difference between the model which uses humidity and the model that uses visibility.
 
+Since there is no visible difference in creating models that use humidity and visibility separately to predict what the weather will be like, let's see what happens if we create a linear SVM model that uses both humidity and visibility values to determine what the weather event will be.
+
+```python
+holder7 = []
+for i, j in train.iterrows():
+    curr = []
+    curr.append(train.at[i, 'VisibilityAvgMiles'])
+    curr.append(train.at[i, 'HumidityAvgPercent'])
+    holder7.append(curr)
+
+X = np.array(holder7)
+Y = train['Numerical_Events']
+
+clf3 = svm.SVC(kernel='linear', C=1.0)
+clf3.fit(X, Y)
+holder8 = []
+for i, j in test.iterrows():
+    curr = []
+    curr.append(test.at[i, 'VisibilityAvgMiles'])
+    curr.append(test.at[i, 'HumidityAvgPercent'])
+    holder8.append(curr)
+    
+test['result'] = clf3.predict(holder8)
+count = []
+
+for i, j in test.iterrows():
+    if test.at[i, 'Numerical_Events'] == test.at[i, 'result']:
+        count.append(1)
+    else:
+        count.append(0)
+
+correct = count.count(1)/261
+print(correct)
+clf3score = []
+clf3score.append(clf3.score(X, Y))
+```
+
+    0.8007662835249042
+ 
+Here we see there is no improvement in accuracy by using both data values to classify the weather type for a day.
+
 ## Conclusion and Further Work
 
-Based on our analysis of this weather data, we have determined that there are clear patterns in how variables such as humidity, visibility, or dew point can affect weather events. However, our investigation did not fully determine a method of how to use these specific data values to classify weather events. We can conclude that individually using humidity or visibility can be a decent indicator of what the weather will look like, however in the future it would be great to get a better handle of what will be the mose efficent predictor.
-
+Based on our analysis of this weather data, we have determined that there are clear patterns in how variables such as humidity, visibility, or dew point can affect weather events. From the analyses of our models, we can see that using humidity alone as the input information to predict the weather type is the most effective. Adding more information by including visibility data to determine the weather type does not improve the accuracy of our model. However, we also take note that the difference in accuracy is not significant and may be a result of the specific dataset we were using. We will take this into account in the future if we try to determine a more effective model to predict the weather type. 
 Our work also focused on the weather of Austin, Texas. In a arid climate such as Texas, it is far more unlikely that weather events such as snow will occur. For further analysis, it might be interesting to look at the locations where the weather is much more varied such as College Park. More varied data might give us a better set of data to train on and detect subtleties in weather events in precipitation. These better predictors can be used to provide pedestrians and drivers a more helpful understanding of how to be safe on the road. Although we weren't able to solve the mystery of metereology, we hope our tutorial gave you a deeper insight into what goes behind determining the weather!
